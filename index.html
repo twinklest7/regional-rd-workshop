@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 지역R&amp;D 사업기획 실전 워크숍 참가안내</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue-dark: #1a3a5c;
+  --blue-mid: #2a5f8f;
+  --blue-light: #4a8bc4;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --bg: #f4f6f9;
+  --white: #ffffff;
+  --text: #1a2535;
+  --text-muted: #556070;
+  --border: #dce4ed;
+  --card-bg: #ffffff;
+  --green: #2d7a4f;
+  --red: #c0392b;
+  --orange: #c47a1a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: linear-gradient(145deg, var(--blue-dark) 0%, var(--blue-mid) 55%, #3a6fa3 100%);
+  padding: 40px 20px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -40px;
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30px; left: -20px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero-inner { position: relative; max-width: 780px; margin: 0 auto; }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.9);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+.hero-badge span { color: var(--gold-light); }
+.hero-title {
+  font-size: clamp(26px, 6vw, 36px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+.hero-subtitle {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+.hero-tag {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 14px;
+}
+.hero-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  max-width: 480px;
+}
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.hero-meta-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+.hero-meta-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* ─── NAV TABS ─── */
+.tab-nav {
+  background: var(--white);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.tab-nav-inner {
+  display: flex;
+  max-width: 780px;
+  margin: 0 auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tab-nav-inner::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1;
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 14px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+  white-space: nowrap;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.tab-btn.active {
+  color: var(--blue-mid);
+  border-bottom-color: var(--blue-mid);
+}
+.tab-btn:hover:not(.active) {
+  color: var(--text);
+  background: rgba(42,95,143,0.04);
+}
+
+/* ─── CONTENT ─── */
+.content { max-width: 780px; margin: 0 auto; padding: 20px 16px 60px; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ─── ALERT CARDS ─── */
+.alert-section { margin-bottom: 24px; }
+.alert-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.alert-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+}
+.alert-icon { font-size: 20px; line-height: 1; margin-top: 1px; }
+.alert-body { flex: 1; }
+.alert-main { font-size: 13px; font-weight: 600; line-height: 1.4; }
+.alert-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; line-height: 1.4; }
+
+/* ─── SECTION HEADER ─── */
+.section-hd {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 28px 0 14px;
+}
+.section-hd-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.section-hd h2 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* ─── INFO GRID ─── */
+.info-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+.info-row {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.info-row:last-child { border-bottom: none; }
+.info-label {
+  min-width: 80px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding-top: 1px;
+}
+.info-value {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ─── OBJECTIVES ─── */
+.objective-list { padding-left: 0; list-style: none; }
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.5;
+}
+.objective-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--blue-mid);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ─── DAY SELECTOR ─── */
+.day-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+.day-tabs::-webkit-scrollbar { display: none; }
+.day-tab {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background: var(--white);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.day-tab.active {
+  background: var(--blue-mid);
+  border-color: var(--blue-mid);
+}
+.day-tab-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+.day-tab.active .day-tab-num { color: rgba(255,255,255,0.75); }
+.day-tab-date {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+.day-tab.active .day-tab-date { color: #fff; }
+
+/* ─── SCHEDULE TABLE ─── */
+.schedule-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.schedule-row {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+}
+.schedule-row:last-child { border-bottom: none; }
+.schedule-row.meal {
+  background: #f9f9f9;
+}
+.schedule-time {
+  min-width: 90px;
+  padding: 12px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.3;
+}
+.schedule-min {
+  font-size: 10px;
+  color: #aaa;
+  font-weight: 400;
+}
+.schedule-body { flex: 1; padding: 12px 14px; }
+.schedule-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  line-height: 1.4;
+  flex-wrap: wrap;
+}
+.schedule-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  margin-top: 1px;
+}
+.schedule-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.meal .schedule-title { color: #888; font-weight: 500; }
+
+/* ─── SHUTTLE ─── */
+.shuttle-timeline {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+.shuttle-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 18px;
+  bottom: 18px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--blue-mid), var(--gold));
+}
+.shuttle-stop {
+  position: relative;
+  margin-bottom: 18px;
+}
+.shuttle-stop::before {
+  content: '';
+  position: absolute;
+  left: -18px;
+  top: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--blue-mid);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--blue-mid);
+}
+.shuttle-stop:last-child::before { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+.shuttle-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.shuttle-point {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+.shuttle-depart {
+  display: inline-block;
+  background: var(--blue-mid);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 4px 0;
+}
+.shuttle-stop:last-child .shuttle-depart { background: var(--gold); }
+.shuttle-detail {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+/* ─── MAP IMAGE PLACEHOLDER ─── */
+.map-placeholder {
+  background: linear-gradient(135deg, #e8eef6 0%, #d0dbe8 100%);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin: 14px 0;
+}
+.map-placeholder-icon { font-size: 32px; margin-bottom: 8px; }
+.map-placeholder-text { font-size: 13px; font-weight: 600; color: var(--blue-dark); }
+.map-placeholder-sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+/* ─── LOCATION ROWS ─── */
+.transport-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.transport-header {
+  background: var(--blue-dark);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 14px;
+  letter-spacing: 0.5px;
+}
+.transport-row {
+  display: flex;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.transport-row:last-child { border-bottom: none; }
+.transport-from {
+  min-width: 80px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue-mid);
+}
+.transport-info { flex: 1; font-size: 12px; color: var(--text); line-height: 1.5; }
+
+/* ─── FACILITY TABS ─── */
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.facility-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+.facility-card.active {
+  border-color: var(--blue-mid);
+  background: linear-gradient(135deg, #f0f6ff 0%, #e8f2ff 100%);
+}
+.facility-card-icon { font-size: 22px; margin-bottom: 6px; }
+.facility-card-label { font-size: 11px; font-weight: 700; color: var(--text-muted); }
+.facility-card.active .facility-card-label { color: var(--blue-mid); }
+.facility-img {
+  width: 100%;
+  border-radius: 10px;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* ─── CONTACT CARDS ─── */
+.contact-grid {
+  display: grid;
+  gap: 10px;
+}
+.contact-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.contact-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-mid), var(--blue-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.contact-role {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 2px;
+}
+.contact-name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.contact-links { display: flex; gap: 10px; flex-wrap: wrap; }
+.contact-link {
+  font-size: 12px;
+  color: var(--blue-mid);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.contact-link:hover { text-decoration: underline; }
+
+/* ─── COMPLETION RULES ─── */
+.rule-list { padding-left: 0; list-style: none; }
+.rule-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+.rule-item:last-child { border-bottom: none; }
+.rule-icon { font-size: 15px; margin-top: 1px; flex-shrink: 0; }
+
+/* ─── REGISTRATION STEPS ─── */
+.reg-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.reg-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.reg-step:last-child { border-bottom: none; }
+.reg-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--blue-mid);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.reg-step-body { flex: 1; }
+.reg-step-title { font-size: 13px; font-weight: 700; color: var(--text); }
+.reg-step-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; line-height: 1.4; }
+.reg-arrow { color: var(--border); font-size: 20px; }
+
+/* ─── NOTE BOX ─── */
+.note-box {
+  background: #fffbea;
+  border: 1px solid #e8c97a;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 12px;
+  color: #6b4c00;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+.note-box strong { color: #5a3c00; }
+
+/* ─── DISCLAIMER ─── */
+.disclaimer {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  line-height: 1.6;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 480px) {
+  .hero { padding: 28px 16px 22px; }
+  .hero-meta { grid-template-columns: 1fr; gap: 8px; }
+  .content { padding: 16px 12px 50px; }
+  .schedule-time { min-width: 76px; font-size: 10px; }
+  .facility-grid { grid-template-columns: repeat(3, 1fr); }
+  .info-label { min-width: 64px; font-size: 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span>2026</span> 지역R&amp;D 사업기획 실전 워크숍
+    </div>
+    <h1 class="hero-title">지역R&amp;D 사업기획<br>실전 워크숍 참가안내문</h1>
+    <p class="hero-subtitle">과학기술정보통신부 &nbsp;·&nbsp; 국가과학기술인력개발원 &nbsp;·&nbsp; 연구개발특구진흥재단</p>
+    <div class="hero-tags">
+      <span class="hero-tag">#사업계획서작성실습</span>
+      <span class="hero-tag">#평가위원관점의기획</span>
+      <span class="hero-tag">#지역주도협력형R&amp;D</span>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">기간</span>
+        <span class="hero-meta-value">8.27(목) ~ 8.28(금) | 1박 2일</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">장소</span>
+        <span class="hero-meta-value">프레이저 플레이스 남대문, 서울</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">인원</span>
+        <span class="hero-meta-value">25명</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">비용</span>
+        <span class="hero-meta-value">300,000원 (4식 및 숙박 제공)</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV TABS -->
+<nav class="tab-nav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" onclick="switchTab('overview')">📋 과정개요</button>
+    <button class="tab-btn" onclick="switchTab('schedule')">🗓 교육일정</button>
+    <button class="tab-btn" onclick="switchTab('access')">🚌 교통 및 시설 안내</button>
+    <button class="tab-btn" onclick="switchTab('info')">📌 참가안내</button>
+    <button class="tab-btn" onclick="switchTab('register')">✅ 수강신청</button>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<main class="content">
+
+  <!-- ── TAB: 과정개요 ── -->
+  <div id="tab-overview" class="tab-panel active">
+
+    <!-- 주요 공지 -->
+    <div class="alert-section">
+      <div class="alert-title">📢 주요 공지</div>
+      <div class="alert-card" style="border-left-color:#c0392b;">
+        <span class="alert-icon">🗓</span>
+        <div class="alert-body">
+          <div class="alert-main">교육 신청 ~8.14(금) 18:00 | 교육비 납부 ~8.21(금) 18:00</div>
+          <div class="alert-sub">교육비 납부자에 한해 입과가 확정됩니다</div>
+        </div>
+      </div>
+      <div class="alert-card" style="border-left-color:#2c5f8a;">
+        <span class="alert-icon">🎓</span>
+        <div class="alert-body">
+          <div class="alert-main">교육시간 참석률 80% 이상 + 설문조사 완료 시 수료</div>
+          <div class="alert-sub">80% 미만 시 자동 미수료 처리됩니다</div>
+        </div>
+      </div>
+      <div class="alert-card" style="border-left-color:#2c5f8a;">
+        <span class="alert-icon">🪪</span>
+        <div class="alert-body">
+          <div class="alert-main">명함 30장 이상 준비</div>
+          <div class="alert-sub">참가자 네트워킹 시 명함 교환이 있습니다</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 교육목표 -->
+    <div class="section-hd">
+      <h2>🎯 교육목표</h2>
+      <div class="section-hd-line"></div>
+    </div>
+    <div class="info-card">
+      <ul class="objective-list">
+        <li class="objective-item">
+          <span class="objective-dot">1</span>
+          지역 R&amp;D 사업기획을 위한 분석 방법론을 이해하고, '지역주도 협력형 R&amp;D 사업' 기획(안)을 실습 및 작성한다.
+        </li>
+      </ul>
+    </div>
+
+    <!-- 과정개요 -->
+    <div class="section-hd">
+      <h2>📋 과정개요</h2>
+      <div class="section-hd-line"></div>
+    </div>
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-label">대상</span>
+        <span class="info-value">연구개발지원단 업무 담당자, 지역R&amp;D 연구기관 재직자 등, 25명</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">기간</span>
+        <span class="info-value">2026. 8. 27.(목) ~ 8. 28.(금) &nbsp;|&nbsp; 1박 2일 (9시간)</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">장소</span>
+        <span class="info-value">(서울) 프레이저 플레이스 남대문 호텔<br><span style="color:var(--text-muted);font-size:12px;">서울 중구 남대문로4가 17-7</span></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">비용</span>
+        <span class="info-value">300,000원 <span style="color:var(--green);font-weight:700;">(4식 및 숙박 제공)</span> <span style="font-size:12px;color:var(--text-muted);">※ 지자체 공무원은 교육비 별도 문의 바람</span></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">주관</span>
+        <span class="info-value">과학기술정보통신부, 국가과학기술인력개발원, 연구개발특구진흥재단</span>
+      </div>
+    </div>
+    <div class="note-box" style="margin-top:10px;">
+      ※ 세금계산서 발행 문의 : <a href="tel:043-251-7044" style="color:var(--blue-mid);">043-251-7044</a> / <a href="mailto:hykim@kird.re.kr" style="color:var(--blue-mid);">hykim@kird.re.kr</a>
+    </div>
+
+    <!-- 이 교육은요 -->
+    <div class="section-hd">
+      <h2>✨ 2026년 지역R&amp;D 사업기획 실전 워크숍은요!</h2>
+      <div class="section-hd-line"></div>
+    </div>
+    <div class="info-card" style="background:linear-gradient(135deg,#f0f6ff 0%,#e8f2ff 100%); border-color:#4a8bc4;">
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <span style="font-size:20px;">⭐</span>
+          <div style="font-size:13px;line-height:1.6;color:var(--blue-dark);"><strong>데이터 활용 전략부터 평가위원 관점의 사업기획 프로세스, 사업계획서 작성 전략까지</strong><br>선정되는 사업계획서를 만들기 위한 실전 노하우를 한번에 익힐 수 있는 교육입니다.</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <span style="font-size:20px;">🤝</span>
+          <div style="font-size:13px;line-height:1.6;color:var(--blue-dark);"><strong>조별토론과 모의실습</strong>을 통해 권역별 협력형 R&amp;D 사업계획서를 직접 작성하고,<br>전문가 피드백으로 사업계획서 완성도를 높이는 실습형 워크숍으로 진행됩니다.</div>
+        </div>
+        <div style="text-align:center;padding:10px;background:rgba(255,255,255,0.7);border-radius:8px;font-size:13px;font-weight:600;color:var(--blue-mid);">
+          "기획(안)에서 사업계획서로, 실전 사업기획을 완성하세요"
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── TAB: 교육일정 ── -->
+  <div id="tab-schedule" class="tab-panel">
+    <div class="section-hd">
+      <h2>🗓 교육일정</h2>
+      <div class="section-hd-line"></div>
+    </div>
+
+    <div class="day-tabs">
+      <div class="day-tab active" id="dtab-1" onclick="switchDay(1)">
+        <span class="day-tab-num">DAY 1</span>
+        <span class="day-tab-date">8.27(목)</span>
+      </div>
+      <div class="day-tab" id="dtab-2" onclick="switchDay(2)">
+        <span class="day-tab-num">DAY 2</span>
+        <span class="day-tab-date">8.28(금)</span>
+      </div>
+    </div>
+
+    <!-- Day 1 -->
+    <div id="day-1" class="schedule-card">
+      <div class="schedule-row">
+        <div class="schedule-time">11:00~12:00<div class="schedule-min">60분</div></div>
+        <div class="schedule-body">
+          <div class="schedule-title">과정소개 및 참가자 네트워킹</div>
+        </div>
+      </div>
+      <div class="schedule-row meal">
+        <div class="schedule-time">12:00~13:00<div class="schedule-min">60분</div></div>
+        <div class="schedule-body"><div class="schedule-title">🍽 점심식사</div></div>
+      </div>
+      <div class="schedule-row">
+        <div class="schedule-time">13:00~14:30<div class="schedule-min">90분</div></div>
+        <div class="schedule-body">
+          <div class="schedule-title">지역R&amp;D 사업기획을 위한 데이터 활용 전략 <span class="schedule-tag" style="background:#e8eef6;color:#1a365d;">기획 방법론</span></div>
+          <div class="schedule-desc">• 지역R&amp;D 데이터 수집 및 활용 방법론<br>• 데이터 기반 사업기획 논리 구성</div>
+        </div>
+      </div>
+      <div class="schedule-row">
+        <div class="schedule-time">14:30~16:00<div class="schedule-min">90분</div></div>
+        <div class="schedule-body">
+          <div class="schedule-title">평가위원 관점의 사업기획 프로세스 <span class="schedule-tag" style="background:#e8f0ff;color:#003366;">사례 학습</span></div>
+          <div class="schedule-desc">• 선정되는 사업계획서의 공통 특징<br>• 평가항목별 작성 전략 및 사례</div>
+        </div>
+      </div>
+      <div class="schedule-row">
+        <div class="schedule-time">16:00~17:30<div class="schedule-min">90분</div></div>
+        <div class="schedule-body">
+          <div class="schedule-title">권역별 협력형 R&amp;D 사업계획서 작성 준비 <span class="schedule-tag" style="background:#e8f4f6;color:#0c4a5e;">작성 전략</span></div>
+          <div class="schedule-desc">• 사업계획서 구성체계 이해<br>• 사업목표∙세부과제∙예산∙성과계획 등 작성포인트 공유</div>
+        </div>
+      </div>
+      <div class="schedule-row meal">
+        <div class="schedule-time">17:30~<div class="schedule-min">-</div></div>
+        <div class="schedule-body"><div class="schedule-title">🍽 저녁식사</div></div>
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div id="day-2" class="schedule-card" style="display:none;">
+      <div class="schedule-row meal">
+        <div class="schedule-time">7:00~9:00<div class="schedule-min">-</div></div>
+        <div class="schedule-body"><div class="schedule-title">🍳 아침식사 및 2일차 등록</div></div>
+      </div>
+      <div class="schedule-row">
+        <div class="schedule-time">9:00~12:00<div class="schedule-min">150분</div></div>
+        <div class="schedule-body">
+          <div class="schedule-title">권역별 협력형 R&amp;D 사업계획서 작성 실습 <span class="schedule-tag" style="background:#fdf6e3;color:#6b4c00;">조별토론/모의실습</span></div>
+          <div class="schedule-desc">• 권역 핵심기술 기반 사업계획서 작성 전략<br>• 사업계획서 내용 구체화 논의 및 모의 사업계획서 작성</div>
+        </div>
+      </div>
+      <div class="schedule-row meal">
+        <div class="schedule-time">12:00~13:00<div class="schedule-min">60분</div></div>
+        <div class="schedule-body"><div class="schedule-title">🍽 점심식사</div></div>
+      </div>
+      <div class="schedule-row">
+        <div class="schedule-time">13:00~14:00<div class="schedule-min">60분</div></div>
+        <div class="schedule-body">
+          <div class="schedule-title">사업계획서 작성 내용 전문가 피드백 <span class="schedule-tag" style="background:#eef6e8;color:#2d5016;">피드백</span></div>
+          <div class="schedule-desc">• 실습 결과에 대한 전문가 피드백(상호 의견제시)<br>• 우수사례 벤치마킹 및 사업계획서 완성도 향상 전략</div>
+        </div>
+      </div>
+      <div class="schedule-row meal">
+        <div class="schedule-time">14:00~14:10<div class="schedule-min">10분</div></div>
+        <div class="schedule-body"><div class="schedule-title">📝 설문조사 및 교육종료</div></div>
+      </div>
+    </div>
+
+    <div class="note-box" style="margin-top:12px;">
+      ※ 상기 내용은 사정에 따라 변경될 수 있습니다.
+    </div>
+  </div>
+
+  <!-- ── TAB: 교통안내 ── -->
+  <div id="tab-access" class="tab-panel">
+
+    <!-- 주소 -->
+    <div class="section-hd">
+      <h2>📍 교육장소</h2>
+      <div class="section-hd-line"></div>
+    </div>
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-label">장소명</span>
+        <span class="info-value" style="font-weight:700;">(서울) 프레이저 플레이스 남대문</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">주소</span>
+        <span class="info-value">서울 중구 남대문로4가 17-7</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">전화</span>
+        <span class="info-value"><a href="tel:02-2098-0888" class="contact-link" style="font-size:13px;">📞 02-2098-0888</a></span>
+      </div>
+    </div>
+
+    <!-- 지하철 -->
+    <div class="section-hd">
+      <h2>🚇 지하철 이용</h2>
+      <div class="section-hd-line"></div>
+    </div>
+    <div class="transport-card">
+      <div class="transport-header">하차역 안내</div>
+      <div class="transport-row">
+        <span class="transport-from">시청역</span>
+        <span class="transport-info">1, 2호선 &nbsp;|&nbsp; 7번 출구 &nbsp;|&nbsp; 도보 약 5분</span>
+      </div>
+      <div class="transport-row">
+        <span class="transport-from">서울역</span>
+        <span class="transport-info">1, 4호선·공항철도 &nbsp;|&nbsp; 4번 출구(1호선 방면) &nbsp;|&nbsp; 도보 약 15분</span>
+      </div>
+    </div>
+
+    <!-- 승용차·택시 -->
+    <div class="section-hd">
+      <h2>🚗 자가용 또는 택시 이용</h2>
+      <div class="section-hd-line"></div>
+    </div>
+    <div class="transport-card">
+      <div class="transport-header">출발지별 이동 안내</div>
+      <div class="transport-row">
+        <span class="transport-from">인천공항</span>
+        <span class="transport-info">약 60km &nbsp;|&nbsp; 약 60분 소요</span>
+      </div>
+      <div class="transport-row">
+        <span class="transport-from">김포공항</span>
+        <span class="transport-info">약 24km &nbsp;|&nbsp; 약 40분 소요</span>
+      </div>
+      <div class="transport-row">
+        <span class="transport-from">서울역</span>
+        <span class="transport-info">약 1.8km &nbsp;|&nbsp; 약 7분 소요</span>
+      </div>
+    </div>
+
+    <!-- 시설 안내 -->
+    <div class="section-hd">
+      <h2>🏨 시설 안내</h2>
+      <div class="section-hd-line"></div>
+    </div>
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-label">객실구성</span>
+        <span class="info-value">침실 1, 욕실 1</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">구비물품</span>
+        <span class="info-value">샴푸, 린스, 바디워시, 헤어드라이어 등<br><span style="font-size:12px;color:var(--red);font-weight:600;">※ 칫솔, 치약은 개별 지참</span></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">편의시설</span>
+        <span class="info-value">피트니스 센터, 비즈니스 센터 등</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── TAB: 참가안내 ── -->
+  <div id="tab-info" class="tab-panel">
+
+    <!-- 참가 준비 -->
+    <div class="section-hd">
+      <h2>🎒 참가 준비</h2>
+      <div class="section-hd-line"></div>
+    </div>
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-label">복장</span>
+        <span class="info-value">교육 분위기를 저해하지 않는 자유로운 복장 <strong>(비즈니스 캐쥬얼 권장)</strong></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">준비물</span>
+        <span class="info-value"><strong>명함 30장 이상</strong>, 개인 세면도구, 여벌의류, 개인 복용약 등</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">기타</span>
+        <span class="info-value">지병 등 교육과정 운영자가 참고할 사항은 반드시 전달 부탁드립니다.<br><span style="font-size:12px;color:var(--text-muted);">(예: 특정 식품 및 환경에 대한 알레르기 질환, 휠체어 사용여부 등)</span></span>
+      </div>
+    </div>
+
+    <!-- 교육수료 -->
+    <div class="section-hd">
+      <h2>🎓 교육수료</h2>
+      <div class="section-hd-line"></div>
+    </div>
+    <div class="schedule-card">
+      <ul class="rule-list">
+        <li class="rule-item"><span class="rule-icon">✅</span><strong>교육시간의 참석률 80% 이상, 설문조사 완료 시 수료</strong>이며, 80% 미만 시 자동 미수료 처리됩니다.</li>
+        <li class="rule-item"><span class="rule-icon">📱</span>교육만족도 설문조사는 교육종료 후, 문자(SMS)를 통해 발송됩니다.</li>
+        <li class="rule-item"><span class="rule-icon">⚠️</span>교육기간 중 불참 사유 발생 시 반드시 교육과정 운영자와 사전 협의 바랍니다. <strong>(허가원 작성 必)</strong></li>
+        <li class="rule-item"><span class="rule-icon">📄</span>수료증은 교육종료 후 KIRD 알파캠퍼스 로그인 → 마이페이지에서 확인 및 출력 가능합니다.</li>
+      </ul>
+    </div>
+
+    <!-- 참고사항 -->
+    <div class="section-hd">
+      <h2>📋 참고사항</h2>
+      <div class="section-hd-line"></div>
+    </div>
+    <div class="schedule-card">
+      <ul class="rule-list">
+        <li class="rule-item"><span class="rule-icon">🕐</span>매 교육 시작 및 종료 시 출석 관리를 실시합니다.</li>
+        <li class="rule-item"><span class="rule-icon">⚠️</span>교육에 몰입할 수 있는 환경 조성을 위해 협조 부탁드리며 지각, 자리 이석(무단 이탈) 등 교육 진행에 지장을 초래할 수 있는 태도는 삼가해 주시기 바랍니다.</li>
+      </ul>
+    </div>
+
+    <!-- 교육변경 및 취소, 환불 -->
+    <div class="section-hd">
+      <h2>📝 교육변경 및 취소, 교육비 환불 기준</h2>
+      <div class="section-hd-line"></div>
+    </div>
+    <div class="schedule-card">
+      <ul class="rule-list">
+        <li class="rule-item"><span class="rule-icon">🖥</span>교육 변경 및 취소는 알파캠퍼스 홈페이지를 통해 가능합니다.<br><span style="font-size:12px;color:var(--text-muted);">※ 교육비 환불은 KIRD 규정에 따르며 취소일에 따라 환불금이 다릅니다.</span></li>
+        <li class="rule-item"><span class="rule-icon">💰</span>교육 개시 전일(워킹데이 기준) 18시 <strong>이전</strong> 취소 : <strong style="color:var(--green);">전액 환불</strong></li>
+        <li class="rule-item"><span class="rule-icon">💸</span>교육 개시 전일(워킹데이 기준) 18시 <strong>이후</strong> 취소 ~ 교육 당일 시작 전 : <strong style="color:var(--orange);">1일 교육비 징수</strong></li>
+        <li class="rule-item"><span class="rule-icon">⚠️</span>교육 시작 후 취소 시, 취소일까지 <strong style="color:var(--red);">일할 계산하여 교육비 징수</strong></li>
+      </ul>
+    </div>
+
+    <!-- 문의처 -->
+    <div class="section-hd">
+      <h2>📞 문의처</h2>
+      <div class="section-hd-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-avatar">제</div>
+        <div>
+          <div class="contact-role">교육대상 및 내용</div>
+          <div class="contact-name">제갈란</div>
+          <div class="contact-links">
+            <a href="tel:043-251-7047" class="contact-link">📞 043-251-7047</a>
+            <a href="mailto:lanjegal@kird.re.kr" class="contact-link">✉ lanjegal@kird.re.kr</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-avatar">유</div>
+        <div>
+          <div class="contact-role">교육운영 및 입과</div>
+          <div class="contact-name">유혜진</div>
+          <div class="contact-links">
+            <a href="tel:043-251-7194" class="contact-link">📞 043-251-7194</a>
+            <a href="mailto:hjyu@kird.re.kr" class="contact-link">✉ hjyu@kird.re.kr</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-avatar">알</div>
+        <div>
+          <div class="contact-role">알파캠퍼스</div>
+          <div class="contact-name">학습지원센터</div>
+          <div class="contact-links">
+            <a href="tel:1588-5834" class="contact-link">📞 1588-5834</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── TAB: 수강신청 ── -->
+  <div id="tab-register" class="tab-panel">
+
+    <!-- 신청 기한 -->
+    <div class="alert-section">
+      <div class="alert-title">⏰ 신청 및 납부 기한</div>
+      <div class="alert-card" style="border-left-color:#c0392b;">
+        <span class="alert-icon">📝</span>
+        <div class="alert-body">
+          <div class="alert-main">교육 신청기간 : ~ 8. 14.(금) 18:00까지</div>
+          <div class="alert-sub">교육신청은 알파캠퍼스 가입 후 가능합니다</div>
+        </div>
+      </div>
+      <div class="alert-card" style="border-left-color:#c47a1a;">
+        <span class="alert-icon">💳</span>
+        <div class="alert-body">
+          <div class="alert-main">교육비 납부 기한 : ~ 8. 21.(금) 18:00까지</div>
+          <div class="alert-sub">※ 교육비 납부자에 한해 입과 확정</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-hd">
+      <h2>✅ 수강신청 안내</h2>
+      <div class="section-hd-line"></div>
+    </div>
+
+    <div class="reg-steps">
+      <div class="reg-step">
+        <div class="reg-num">1</div>
+        <div class="reg-step-body">
+          <div class="reg-step-title">알파캠퍼스 접속 및 회원가입·로그인</div>
+          <div class="reg-step-desc"><a href="https://alpha-campus.kr" target="_blank" style="color:var(--blue-mid);">www.alpha-campus.kr</a> 접속 후 회원가입 및 로그인</div>
+        </div>
+      </div>
+      <div class="reg-step">
+        <div class="reg-num">2</div>
+        <div class="reg-step-body">
+          <div class="reg-step-title">'교육과정' 검색</div>
+          <div class="reg-step-desc">상단 검색창에서 <strong>"지역R&amp;D 사업기획 실전 워크숍"</strong> 검색</div>
+        </div>
+      </div>
+      <div class="reg-step">
+        <div class="reg-num">3</div>
+        <div class="reg-step-body">
+          <div class="reg-step-title">희망 '교육과정' 클릭</div>
+          <div class="reg-step-desc">검색 결과에서 해당 과정을 선택합니다</div>
+        </div>
+      </div>
+      <div class="reg-step">
+        <div class="reg-num">4</div>
+        <div class="reg-step-body">
+          <div class="reg-step-title">'수강신청' 클릭</div>
+          <div class="reg-step-desc">과정 상세 페이지에서 수강신청 버튼을 클릭합니다</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;text-align:center;">
+      <a href="https://alpha-campus.kr" target="_blank" style="display:inline-block;background:var(--blue-mid);color:#fff;font-size:14px;font-weight:700;padding:13px 32px;border-radius:8px;text-decoration:none;letter-spacing:0.5px;">
+        알파캠퍼스 바로가기 →
+      </a>
+    </div>
+
+    <!-- 교육비 납부 -->
+    <div class="section-hd">
+      <h2>💳 교육비 납부 안내</h2>
+      <div class="section-hd-line"></div>
+    </div>
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-label">비용</span>
+        <span class="info-value" style="font-weight:700;">300,000원 <span style="color:var(--green);">(4식 및 숙박 제공)</span> <span style="font-size:12px;color:var(--text-muted);font-weight:400;">※ 지자체 공무원은 교육비 별도 문의 바람</span></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">공통</span>
+        <span class="info-value">알파캠퍼스 로그인 → 상단 학습란 → <strong>결제이력</strong> 클릭 → <strong>결제</strong> 버튼 클릭</span>
+      </div>
+    </div>
+
+    <div class="transport-card" style="margin-top:12px;">
+      <div class="transport-header">결제방법별 안내</div>
+      <div class="transport-row">
+        <span class="transport-from">무통장입금</span>
+        <span class="transport-info">교육비 결제방법에서 <strong>가상계좌(무통장입금)</strong> 선택 → 환불계좌 정보 입력 후 결제 버튼 클릭</span>
+      </div>
+      <div class="transport-row">
+        <span class="transport-from">신용카드</span>
+        <span class="transport-info">교육비 결제방법에서 <strong>신용카드</strong> 선택 → 결제 버튼 클릭</span>
+      </div>
+      <div class="transport-row">
+        <span class="transport-from">전자세금계산서</span>
+        <span class="transport-info">교육비 결제방법에서 <strong>전자계산서</strong> 선택 → 계산서 발행정보 입력 → 발행 신청 클릭<br><span style="font-size:12px;color:var(--text-muted);">※ 한 기관에서 단체로 전자세금계산서 발행이 필요한 경우, 전자세금계산서 선택 후 KIRD 교육비 담당자에게 별도 연락</span></span>
+      </div>
+    </div>
+
+    <div class="note-box" style="margin-top:12px;">
+      <strong>수강신청 전 확인사항</strong><br>
+      • 교육비 환불은 KIRD 규정에 따르며 취소일에 따라 환불금이 다릅니다.<br>
+      • 세금계산서 발행 문의 : 043-251-7044 / hykim@kird.re.kr
+    </div>
+
+    <div class="disclaimer">
+      본 안내문의 내용은 추후 변경될 수 있습니다.<br>
+      최신 정보는 <a href="https://alpha-campus.kr" target="_blank" style="color:var(--blue-mid);">알파캠퍼스</a>를 통해 확인하시기 바랍니다.<br><br>
+      주관: <strong>과학기술정보통신부</strong> &nbsp;·&nbsp; <strong>국가과학기술인력개발원(KIRD)</strong> &nbsp;·&nbsp; <strong>연구개발특구진흥재단</strong>
+    </div>
+
+  </div>
+
+</main>
+
+<script>
+function switchTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function switchDay(n) {
+  for (var i = 1; i <= 2; i++) {
+    var dc = document.getElementById('day-' + i);
+    var dt = document.getElementById('dtab-' + i);
+    if (dc) dc.style.display = (i === n) ? 'block' : 'none';
+    if (dt) dt.classList.toggle('active', i === n);
+  }
+}
+</script>
+</body>
+</html>
