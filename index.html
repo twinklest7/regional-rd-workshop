@@ -646,8 +646,99 @@ body {
   line-height: 1.6;
 }
 
+/* ─── REVIEW (교육후기) ─── */
+.review-subtitle { font-size: 12.5px; color: var(--text-muted); line-height: 1.7; margin: -6px 0 14px; }
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left-width: 3px;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(28,40,60,0.03);
+}
+.review-tagline { font-size: 11px; font-weight: 700; color: var(--blue-mid); background: #eef4fb; display: inline-block; border-radius: 5px; padding: 3px 7px; margin-bottom: 9px; }
+.review-text {
+  font-size: 13.5px; color: #333; line-height: 1.7;
+  margin-bottom: 12px; position: relative; padding-left: 4px;
+}
+.review-text::before {
+  content: '\201C';
+  color: var(--gold); font-size: 22px; font-weight: 900;
+  margin-right: 2px; font-family: Georgia, serif;
+  line-height: 0.4; vertical-align: -4px;
+}
+.review-author { display: flex; align-items: center; gap: 10px; }
+.review-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 13px; font-weight: 700; flex-shrink: 0;
+}
+.review-meta .name { font-size: 13px; font-weight: 700; color: #1a1a1a; line-height: 1.3; }
+.review-meta .org { font-size: 11px; color: #999; margin-top: 1px; }
+
+/* ─── WHY (교육 필요성·특성) ─── */
+.why-section {
+  background: linear-gradient(160deg, #ffffff 0%, #f2f7fc 100%);
+  border: 1px solid #d5e2ee;
+  border-radius: 12px;
+  padding: 22px 20px 20px;
+  margin-bottom: 26px;
+}
+.why-eyebrow {
+  display: inline-block;
+  font-size: 11px; font-weight: 800; letter-spacing: 0;
+  color: #a8862f;
+  background: rgba(201,168,76,0.13);
+  border: 1px solid rgba(201,168,76,0.38);
+  border-radius: 999px;
+  padding: 4px 10px;
+  margin-bottom: 12px;
+}
+.why-headline {
+  font-size: 20px; font-weight: 800; line-height: 1.45;
+  color: var(--blue-dark); letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+.why-lead { font-size: 13px; line-height: 1.8; color: var(--text-muted); margin-bottom: 18px; }
+.why-lead strong { color: var(--blue-mid); font-weight: 700; }
+.why-quote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+.why-quote {
+  position: relative; overflow: hidden;
+  background: #e9f1f8; border: 1px solid #d8e6f1;
+  border-radius: 10px; padding: 16px 14px 14px;
+}
+.why-quote::before {
+  content: '\201C';
+  position: absolute; top: 2px; right: 10px;
+  font-family: Georgia, serif; font-size: 44px; font-weight: 700;
+  color: #c9dced; line-height: 1;
+}
+.why-quote h4 { position: relative; z-index: 1; font-size: 13px; font-weight: 700; color: var(--blue-dark); line-height: 1.55; margin-bottom: 6px; }
+.why-quote p { position: relative; z-index: 1; font-size: 12px; color: var(--text-muted); line-height: 1.65; }
+.why-bridge {
+  text-align: center; font-size: 13px; font-weight: 600; color: var(--blue-dark);
+  background: var(--white); border: 1px dashed var(--blue-light);
+  border-radius: 10px; padding: 12px 14px; margin-bottom: 18px; line-height: 1.6;
+}
+.why-bridge strong { color: var(--blue-mid); border-bottom: 2px solid var(--gold); padding-bottom: 1px; }
+.why-feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.why-feature {
+  display: flex; align-items: flex-start; gap: 10px;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px;
+}
+.why-feature .fi { font-size: 19px; line-height: 1; margin-top: 2px; }
+.why-feature h4 { font-size: 13px; font-weight: 700; color: var(--blue-dark); margin-bottom: 4px; }
+.why-feature p { font-size: 12px; color: var(--text-muted); line-height: 1.65; }
+@media (max-width: 640px) {
+  .why-quote-grid, .why-feature-grid { grid-template-columns: 1fr; }
+  .why-headline { font-size: 17px; }
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 480px) {
+  .why-section { padding: 18px 15px 16px; }
   .hero { padding: 28px 16px 22px; }
   .hero-meta { grid-template-columns: 1fr; gap: 8px; }
   .content { padding: 16px 12px 50px; }
@@ -666,7 +757,7 @@ body {
       <span>2026</span> 지역R&amp;D 사업기획 실전 워크숍
     </div>
     <h1 class="hero-title">지역R&amp;D 사업기획<br>실전 워크숍 참가안내문</h1>
-    <p class="hero-subtitle">과학기술정보통신부 &nbsp;·&nbsp; 국가과학기술인력개발원 &nbsp;·&nbsp; 연구개발특구진흥재단</p>
+    <p class="hero-subtitle">과학기술정보통신부 &nbsp;·&nbsp; 국가과학기술인력개발원</p>
     <div class="hero-tags">
       <span class="hero-tag">#사업계획서작성실습</span>
       <span class="hero-tag">#평가위원관점의기획</span>
@@ -699,7 +790,7 @@ body {
     <button class="tab-btn active" onclick="switchTab('overview')">📋 과정개요</button>
     <button class="tab-btn" onclick="switchTab('schedule')">🗓 교육일정</button>
     <button class="tab-btn" onclick="switchTab('access')">🚌 교통 및 시설 안내</button>
-    <button class="tab-btn" onclick="switchTab('info')">📌 참가안내</button>
+    <button class="tab-btn" onclick="switchTab('info')">📌 참가안내 및 후기</button>
     <button class="tab-btn" onclick="switchTab('register')">✅ 수강신청</button>
   </div>
 </nav>
@@ -709,6 +800,67 @@ body {
 
   <!-- ── TAB: 과정개요 ── -->
   <div id="tab-overview" class="tab-panel active">
+
+    <!-- 교육 필요성 · 특성 -->
+    <div class="why-section">
+      <div class="why-eyebrow">왜 이 워크숍을 들어야 할까요?</div>
+      <div class="why-headline">사업 아이템은 있는데, 사업계획서로 옮기는 순간 벽에 부딪치지 않나요?</div>
+      <p class="why-lead">
+        열심히 쓴 기획안이라도 평가위원은 전혀 다른 기준으로 읽기 때문입니다.
+        이 워크숍은 <strong>데이터로 사업의 논리를 세우고, 평가위원의 관점에 맞춰 계획서를 완성하는</strong> 실전 과정입니다.
+        무엇을, 어디까지, 어떻게 담아야 선정되는 계획서가 되는지 직접 써 보며 익힙니다.
+      </p>
+
+      <div class="why-quote-grid">
+        <div class="why-quote">
+          <h4>기획안은 열심히 만들었는데<br>왜 우리 계획서는 선정이 안 될까?</h4>
+          <p>평가위원이 무엇을 보는지 알아야, 선정되는 사업계획서를 쓸 수 있습니다.</p>
+        </div>
+        <div class="why-quote">
+          <h4>데이터는 모았는데<br>기획 논리로 어떻게 연결하지?</h4>
+          <p>수집한 데이터를 문제 정의와 사업 필요성으로 이어 붙이는 구성력이 필요합니다.</p>
+        </div>
+        <div class="why-quote">
+          <h4>목표·과제·예산·성과,<br>어디까지 구체적으로 써야 하지?</h4>
+          <p>평가항목별 작성 포인트를 알아야 설득력 있는 계획서를 완성할 수 있습니다.</p>
+        </div>
+      </div>
+
+      <div class="why-bridge">
+        이 워크숍은 세 가지 질문에 대한 답을 <strong>'권역별 협력형 R&amp;D 모의 사업계획서'</strong>라는 실제 문서로 완성해 드립니다.
+      </div>
+
+      <div class="why-feature-grid">
+        <div class="why-feature">
+          <span class="fi">📊</span>
+          <div>
+            <h4>데이터 활용 전략</h4>
+            <p>지역R&amp;D 데이터 수집·활용 방법을 익히고, 이를 기획 논리로 구성하는 법을 배웁니다.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <span class="fi">🔍</span>
+          <div>
+            <h4>평가위원 관점의 기획</h4>
+            <p>선정되는 사업계획서의 특징을 짚고, 평가항목별 작성 전략을 구체적으로 다룹니다.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <span class="fi">📝</span>
+          <div>
+            <h4>사업계획서 작성 실습</h4>
+            <p>목표·세부과제·예산·성과계획까지, 권역 핵심기술을 기반으로 직접 작성해 봅니다.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <span class="fi">🎯</span>
+          <div>
+            <h4>전문가 피드백으로 완성도 제고</h4>
+            <p>작성한 모의 사업계획서에 전문가 피드백을 받아 곧바로 보완·발전시킵니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- 주요 공지 -->
     <div class="alert-section">
@@ -744,7 +896,6 @@ body {
     <div class="info-card">
       <ul class="objective-list">
         <li class="objective-item">
-
           지역 R&amp;D 사업기획을 위한 분석 방법론을 이해하고, '지역주도 협력형 R&amp;D 사업' 기획(안)을 실습 및 작성한다.
         </li>
       </ul>
@@ -758,7 +909,7 @@ body {
     <div class="info-card">
       <div class="info-row">
         <span class="info-label">대상</span>
-        <span class="info-value">연구개발지원단, (연지단 담당)지자체 공무원, 지역R&amp;D 연구기관 재직자 등 / 25명</span>
+        <span class="info-value">연구개발지원단 업무 담당자, 지역R&amp;D 연구기관 재직자 등, 25명</span>
       </div>
       <div class="info-row">
         <span class="info-label">기간</span>
@@ -774,32 +925,11 @@ body {
       </div>
       <div class="info-row">
         <span class="info-label">주관</span>
-        <span class="info-value">과학기술정보통신부, 국가과학기술인력개발원, 연구개발특구진흥재단</span>
+        <span class="info-value">과학기술정보통신부, 국가과학기술인력개발원</span>
       </div>
     </div>
     <div class="note-box" style="margin-top:10px;">
       ※ 세금계산서 발행 문의 : <a href="tel:043-251-7044" style="color:var(--blue-mid);">043-251-7044</a> / <a href="mailto:hykim@kird.re.kr" style="color:var(--blue-mid);">hykim@kird.re.kr</a>
-    </div>
-
-    <!-- 이 교육은요 -->
-    <div class="section-hd">
-      <h2>✨ 2026년 지역R&amp;D 사업기획 실전 워크숍은요!</h2>
-      <div class="section-hd-line"></div>
-    </div>
-    <div class="info-card" style="background:linear-gradient(135deg,#f0f6ff 0%,#e8f2ff 100%); border-color:#4a8bc4;">
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <div style="display:flex;align-items:flex-start;gap:10px;">
-          <span style="font-size:20px;">⭐</span>
-          <div style="font-size:13px;line-height:1.6;color:var(--blue-dark);"><strong>데이터 활용 전략부터 평가위원 관점의 사업기획 프로세스, 사업계획서 작성 전략까지</strong><br>선정되는 사업계획서를 만들기 위한 실전 노하우를 한번에 익힐 수 있는 교육입니다.</div>
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:10px;">
-          <span style="font-size:20px;">🤝</span>
-          <div style="font-size:13px;line-height:1.6;color:var(--blue-dark);"><strong>조별토론과 모의실습</strong>을 통해 권역별 협력형 R&amp;D 사업계획서를 직접 작성하고,<br>전문가 피드백으로 사업계획서 완성도를 높이는 실습형 워크숍으로 진행됩니다.</div>
-        </div>
-        <div style="text-align:center;padding:10px;background:rgba(255,255,255,0.7);border-radius:8px;font-size:13px;font-weight:600;color:var(--blue-mid);">
-          "기획(안)에서 사업계획서로, 실전 사업기획을 완성하세요"
-        </div>
-      </div>
     </div>
 
   </div>
@@ -1082,6 +1212,54 @@ body {
       </div>
     </div>
 
+
+    <!-- 교육후기 -->
+    <div class="section-hd">
+      <h2>💬 교육후기</h2>
+      <div class="section-hd-line"></div>
+    </div>
+    <p class="review-subtitle">이전 기수 교육생들의 한 줄 후기입니다.</p>
+
+    <div class="review-card" style="border-left-color:#2c5f8a;">
+      <div class="review-tagline">R&amp;D 사업계획서 작성 실습</div>
+      <div class="review-text">기존 보고서 작성 시 매년 차별성 없이 유사한 내용을 반복적으로 넣었는데, 교육을 통해 체계적인 사업계획서 작성 방법론을 습득하였음. 특히 평가지표를 중심으로 한 계획서 내용 구성 방안이 도움이 됨.</div>
+      <div class="review-author">
+        <div class="review-avatar" style="background:#2c5f8a;">A</div>
+        <div class="review-meta">
+          <div class="name">A 연구원</div>
+          <div class="org">제주테크노파크</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card" style="border-left-color:#c9a84c;">
+      <div class="review-tagline">R&amp;D 사업계획서 작성 실습</div>
+      <div class="review-text">각 지역의 사업계획서 작성 사례와, 지역별 특화 기술 및 산업영역에 대한 정보 공유 시간이 유익하였음.</div>
+      <div class="review-author">
+        <div class="review-avatar" style="background:#c9a84c;">B</div>
+        <div class="review-meta">
+          <div class="name">B 연구원</div>
+          <div class="org">부산연구개발지원단(BISTEP)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card" style="border-left-color:#2d7a4f;">
+      <div class="review-tagline">사업기획 프로세스</div>
+      <div class="review-text">정책기획을 10년 이상 경험한 지역 이해도가 높은 전문가가 강의를 해서, 실제 현장에서 어떤 어려움이 있는지를 토대로 현실적인 방안을 제시하여 공감되는 부분이 많았음.</div>
+      <div class="review-author">
+        <div class="review-avatar" style="background:#2d7a4f;">C</div>
+        <div class="review-meta">
+          <div class="name">C 팀장</div>
+          <div class="org">강릉과학산업진흥원</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-box" style="margin-top:10px;">
+      ※ 상기 후기는 이전 기수 교육생 설문 응답을 발췌한 것으로, 성명은 비공개 처리하였습니다.
+    </div>
+
   </div>
 
   <!-- ── TAB: 수강신청 ── -->
@@ -1189,7 +1367,7 @@ body {
     <div class="disclaimer">
       본 안내문의 내용은 추후 변경될 수 있습니다.<br>
       최신 정보는 <a href="https://alpha-campus.kr" target="_blank" style="color:var(--blue-mid);">알파캠퍼스</a>를 통해 확인하시기 바랍니다.<br><br>
-      주관: <strong>과학기술정보통신부</strong> &nbsp;·&nbsp; <strong>국가과학기술인력개발원(KIRD)</strong> &nbsp;·&nbsp; <strong>연구개발특구진흥재단</strong>
+      주관: <strong>과학기술정보통신부</strong> &nbsp;·&nbsp; <strong>국가과학기술인력개발원(KIRD)</strong>
     </div>
 
   </div>
